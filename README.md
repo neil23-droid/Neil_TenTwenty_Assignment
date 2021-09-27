@@ -35,5 +35,7 @@ Screens & flow
 -displays the list of confirmed tickets for the user
 
 Architecture:
--Uses basics of MVVM
--Each Screen is made up of an Activity, a View Model and a Repository
+-Uses basics of MVVM.
+-Each Screen is made up of an Activity, a View Model and a Repository.
+-Uses basic kotlin co routines for making API calls and for dealing with local databases.
+-DOES NOT use dagger2 for dependency injection
