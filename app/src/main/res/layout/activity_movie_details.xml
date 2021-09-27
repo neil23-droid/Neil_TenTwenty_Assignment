@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey_1"
+    tools:context=".MovieDetail.MovieDetailsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/navIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:id="@+id/toolbar_title"
+        style="@style/toolbarStyle"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:layout_gravity="center|center_horizontal"
+        tools:text="Benedetta"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintStart_toEndOf="@id/navIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/movieImagesViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/swipeable_images_tab_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="@id/movieImagesViewPager"
+                app:layout_constraintStart_toStartOf="@id/movieImagesViewPager"
+                app:layout_constraintTop_toBottomOf="@id/movieImagesViewPager"
+                app:tabBackground="@drawable/tab_selector_for_swipeable_images"
+                app:tabIndicatorHeight="0dp"
+                app:tabMode="fixed"
+                app:tabRippleColor="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/movieTitle"
+                android:layout_width="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                tools:text="Captain America: Civil War"
+                android:maxLines="2"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/swipeable_images_tab_layout"/>
+
+            <Button
+                android:id="@+id/viewTrailerButton"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:backgroundTint="#CCCCCC"
+                android:layout_marginTop="8dp"
+                android:text="@string/watch_trailer_btn_label"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/movieTitle"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"/>
+
+            <TextView
+                android:id="@+id/genresTxt"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Genres"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/viewTrailerButton"/>
+
+            <TextView
+                android:id="@+id/genresValues"
+                android:layout_width="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                tools:text="Action, Thriller, Science Fiction"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/genresTxt"/>
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Date"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/genresValues"/>
+
+            <TextView
+                android:id="@+id/dateValue"
+                android:layout_width="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                tools:text="6 May 2016"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/dateTxt"/>
+
+            <TextView
+                android:id="@+id/overviewTxt"
+                android:layout_width="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Overview"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/dateValue"/>
+
+            <TextView
+                android:id="@+id/overviewValue"
+                android:layout_width="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="6"
+                android:ellipsize="end"
+                tools:text="@string/dummy_long_overview"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/overviewTxt"/>
+
+            <TextView
+                android:id="@+id/popularityRatingTxt"
+                android:layout_width="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Popularity"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintTop_toBottomOf="@id/overviewValue"/>
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/popularityRating"
+                style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:isIndicator="true"
+                android:rating="0.0"
+                android:numStars="10"
+                android:stepSize="0.1"
+                android:theme="@style/RatingBar3"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popularityRatingTxt"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bookMovieTicketCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@drawable/rectangular_bg_blue_border"
+                app:layout_constraintStart_toStartOf="@id/movieTitle"
+                app:layout_constraintEnd_toEndOf="@id/movieTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popularityRating">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Book Ticket"
+                    android:textSize="16sp"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="center"
+                    android:textColor="@color/design_default_color_primary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/materialPorgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackColor="#DDD"
+        app:trackThickness="5dp"
+        app:indicatorColor="@color/black"
+        android:indeterminate="true"
+        app:indicatorSize="50dp"
+        android:visibility="gone"
+        style="@style/Widget.MaterialComponents.CircularProgressIndicator"
+        app:indicatorDirectionCircular="clockwise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

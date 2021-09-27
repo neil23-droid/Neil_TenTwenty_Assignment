@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TheMoviesApp</string>
+    <string name="the_movies_app_label">The Movies App</string>
+    <string name="watch_trailer_btn_label">Watch Trailer</string>
+    <string name="dummy_long_overview">
+        Political pressure mounts to install a system of accountability when the actions of the Avengers lead to collateral damage. The new status quo deeply divides members of the team. Captain America (Chris Evans) believes superheroes should remain free to defend humanity without government interference. Iron Man (Robert Downey Jr.) sharply disagrees and supports oversight. As the debate escalates into an all-out feud, Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner) must pick a side.</string>
+    <string name="book_ticket">Book Ticket</string>
+    <string name="booked_ticket_history">Booked Ticket History</string>
+</resources>
