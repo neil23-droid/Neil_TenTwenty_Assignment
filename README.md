@@ -13,7 +13,7 @@ Packages:
 6)MovieListing - UI that displays a list of upcoming movies
 7)Others - files containing reused constants, extensions of classes and prefernces
 8)Retrofit - files for making API calls to remote data sources
-9)BookTicket - UI that enales the user to confirm ticket details
+9)BookTicket - UI that enables the user to confirm ticket details
 
 Screens & flow
 1)MoviesListing Screen
